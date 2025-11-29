@@ -1,0 +1,258 @@
+/* ===========================================================
+DASHBOARD BEPENSA - STYLE SHEET COMPLETO
+Compatible con sidebar ancho, dark mode y cards Figma
+   =========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app-root {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#app-root.light-theme {
+    background-color: #f1f1f1 !important;
+    color: #1a1a1a !important;
+}
+
+#app-root.light-theme #sidebar {
+    background-color: #ffffff !important;
+    color: #8c8c8c !important;
+}
+
+#app-root.light-theme .clock-box {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#app-root.dark-theme {
+    background-color: #0a0a0a !important;
+    color: #f5f5f5 !important;
+}
+
+#app-root.dark-theme #sidebar {
+    background-color: #111 !important;
+    border-right: 1px solid #333 !important;
+    color: #f5f5f5 !important;
+}
+
+#app-root.dark-theme .sidebar-icon-link img {
+    filter: brightness(0.75);
+}
+
+#app-root.dark-theme .sidebar-icon-link.active img {
+    filter: brightness(1.2);
+}
+
+#app-root.dark-theme .card,
+#app-root.dark-theme .section-card,
+#app-root.dark-theme .content-card,
+#app-root.dark-theme .dbc-card,
+#app-root.dark-theme .card-body {
+    background-color: #1a1a1a !important;
+    color: #f5f5f5 !important;
+    box-shadow: 0 2px 8px rgba(255,255,255,0.08) !important;
+}
+
+#app-root.dark-theme h1,
+#app-root.dark-theme h2,
+#app-root.dark-theme h3,
+#app-root.dark-theme h4,
+#app-root.dark-theme h5,
+#app-root.dark-theme h6,
+#app-root.dark-theme p {
+    color: #f5f5f5 !important;
+}
+
+#app-root.dark-theme .clock-box {
+    background-color: #1a1a1a !important;
+    color: #f5f5f5 !important;
+    border: 1px solid #444 !important;
+    box-shadow: 0 1px 4px rgba(255,255,255,0.2) !important;
+}
+
+#app-root.dark-theme .js-plotly-plot .plotly .main-svg {
+    background-color: transparent !important;
+}
+
+#sidebar {
+    text-align: center;
+}
+
+.sidebar-icon-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding: 6px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    transition: background-color 0.25s ease,
+                transform 0.18s ease,
+                box-shadow 0.25s ease,
+                border-radius 0.25s ease;
+}
+
+.sidebar-icon-link:hover {
+    background-color: rgba(245, 124, 59, 0.20);
+    border-radius: 14px;
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.sidebar-icon-link.active {
+    background-color: #f57c3b !important;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.20);
+    animation: activeFade 0.3s ease;
+}
+
+.sidebar-icon-link.active img {
+    filter: brightness(2);
+}
+
+#app-root.dark-theme .sidebar-icon-link:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 14px;
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(255,255,255,0.18);
+}
+
+#app-root.dark-theme .sidebar-icon-link.active {
+    background-color: #e67c30 !important;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(255,255,255,0.22);
+    animation: activeFadeDark 0.35s ease;
+}
+
+@keyframes activeFade {
+    from { opacity: 0.6; transform: scale(0.97); }
+    to   { opacity: 1;   transform: scale(1); }
+}
+
+@keyframes activeFadeDark {
+    from { opacity: 0.5; transform: scale(0.95); }
+    to   { opacity: 1;   transform: scale(1); }
+}
+
+#page-content {
+    min-height: 100vh;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+h6 {
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.section-card {
+    border-top: 6px solid #f57c3b !important;
+    border-radius: 18px !important;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+}
+
+.section-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.20);
+}
+
+.content-card {
+    border-radius: 16px !important;
+    padding: 16px !important;
+    background-color: #fafafa !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.clock-box {
+    font-size: 15px;
+    padding: 6px 10px;
+    background-color: white;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.js-plotly-plot {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#app-root.light-theme .js-plotly-plot .plotly .main-svg {
+    background-color: transparent !important;
+}
+
+.section-row {
+    margin-bottom: 20px;
+}
+
+.page-row {
+    margin-bottom: 24px;
+}
+
+.simple-list {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.kpi-box {
+    background-color: #f5f5f5;
+    border-radius: 14px;
+    padding: 12px;
+    text-align: center;
+}
+
+.kpi-number {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f57c3b;
+}
+
+#app-root.dark-theme .kpi-box {
+    background-color: #222 !important;
+}
+
+/* ============================================
+PLOTLY TEXT COLORS - LIGHT MODE
+   ============================================ */
+
+#app-root.light-theme .js-plotly-plot .plotly text {
+    fill: #1a1a1a !important;  /* Texto negro */
+    color: #1a1a1a !important;
+}
+
+#app-root.light-theme .js-plotly-plot .plotly .xtick text,
+#app-root.light-theme .js-plotly-plot .plotly .ytick text {
+    fill: #1a1a1a !important;
+}
+
+
+/* ============================================
+PLOTLY TEXT COLORS - DARK MODE
+   ============================================ */
+
+#app-root.dark-theme .js-plotly-plot .plotly text {
+    fill: #f5f5f5 !important;  /* Texto blanco */
+    color: #f5f5f5 !important;
+}
+
+#app-root.dark-theme .js-plotly-plot .plotly .xtick text,
+#app-root.dark-theme .js-plotly-plot .plotly .ytick text {
+    fill: #f5f5f5 !important;
+}
