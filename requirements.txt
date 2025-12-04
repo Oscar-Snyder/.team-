@@ -1,0 +1,16 @@
+pandas
+numpy
+scikit-learn
+xgboost
+dash
+dash-bootstrap-components
+plotly
+
+"pip install \
+    scikit-learn \
+    xgboost \
+    pandas \
+    numpy \
+    dash \
+    dash-bootstrap-components \
+    plotly"
