@@ -1,0 +1,339 @@
+/* ====== LAYOUT GENERAL ====== */
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* App root: cambia entre light-theme / dark-theme */
+
+#app-root.light-theme {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+#app-root.dark-theme {
+    background-color: #050505;
+    color: #f9fafb;
+}
+
+/* Contenedor principal (lado derecho) */
+
+.page-container {
+    margin-left: 80px;           /* coincide con el ancho del sidebar */
+    padding: 24px 32px;
+    min-height: 100vh;
+    background-color: rgba(255,255,255,0.85);
+    background-image: url("/assets/bepensa.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 900px;
+}
+
+#app-root.dark-theme .page-container {
+    background-color: #111827;
+    background-image: none;  /* si quieres quitar el watermark en dark */
+}
+
+/* ====== SIDEBAR DELGADA ====== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+    z-index: 100;
+}
+
+#app-root.dark-theme .sidebar {
+    background-color: #020617;
+    border-right-color: #1f2937;
+}
+
+.sidebar-logo-container {
+    margin-bottom: 24px;
+}
+
+.sidebar-logo-img {
+    width: 42px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Nav */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-navlink {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #4b5563;
+    background-color: transparent;
+    transition: all 0.18s ease-in-out;
+}
+
+.sidebar-navlink:hover {
+    background-color: rgba(245, 124, 59, 0.12);
+    color: #f57c3b;
+}
+
+.sidebar-navlink.active {
+    background-color: #f57c3b;
+    color: #ffffff;
+}
+
+/* Dark mode tipografía */
+
+#app-root.dark-theme .sidebar-navlink {
+    color: #9ca3af;
+}
+
+#app-root.dark-theme .sidebar-navlink.active {
+    background-color: #f57c3b;
+    color: #ffffff;
+}
+
+/* Dark mode switch */
+
+.sidebar-spacer {
+    flex: 1;
+}
+
+.sidebar-dark-container {
+    padding: 8px 6px 12px 6px;
+    text-align: center;
+}
+
+.sidebar-dark-label {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 4px;
+    color: #6b7280;
+}
+
+#app-root.dark-theme .sidebar-dark-label {
+    color: #9ca3af;
+}
+
+/* ====== HEADER Y RELOJ ====== */
+
+.page-header-row {
+    margin-bottom: 24px;
+}
+
+.header-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.header-subtitle {
+    font-weight: 400;
+    color: #6b7280;
+    margin: 0;
+}
+
+#app-root.dark-theme .header-subtitle {
+    color: #9ca3af;
+}
+
+.clock-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(15,23,42,0.15);
+}
+
+#app-root.dark-theme .clock-box {
+    background-color: #0b1120;
+    color: #e5e7eb;
+}
+
+/* ====== HOME: SECCIONES ====== */
+
+.page-home {
+    max-width: 1100px;
+}
+
+.home-sections-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.section-row {
+    margin-bottom: 18px;
+}
+
+/* Tarjetas estilo Figma */
+
+.section-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section-card {
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(15,23,42,0.12);
+    overflow: hidden;
+    background-color: #ffffff;
+    border-top: 6px solid #f57c3b;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    height: 170px;
+}
+
+.section-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(15,23,42,0.20);
+}
+
+.section-card-icon {
+    font-size: 30px;
+    color: #f57c3b;
+    margin-bottom: 8px;
+}
+
+.section-card-title {
+    font-size: 20px;
+    font-weight: 650;
+    margin-bottom: 4px;
+}
+
+.section-card-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Dark mode para cards */
+
+#app-root.dark-theme .section-card {
+    background-color: #020617;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+#app-root.dark-theme .section-card-subtitle {
+    color: #9ca3af;
+}
+
+/* ====== TOP NAV ICONS (PÁGINAS INTERNAS) ====== */
+
+.top-nav-icons-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.top-nav-icon-wrapper {
+    text-decoration: none;
+}
+
+.top-nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(15,23,42,0.16);
+    font-size: 18px;
+    color: #4b5563;
+    transition: all 0.15s ease;
+}
+
+.top-nav-icon:hover {
+    background-color: #f57c3b;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+#app-root.dark-theme .top-nav-icon {
+    background-color: #020617;
+    color: #9ca3af;
+}
+
+/* ====== CARDS GENERALES DE CONTENIDO ====== */
+
+.page-row {
+    margin-bottom: 24px;
+}
+
+.content-card {
+    border-radius: 18px;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(15,23,42,0.16);
+    padding: 14px;
+    height: 100%;
+}
+
+.content-card.card-large {
+    height: 360px;
+}
+
+#app-root.dark-theme .content-card {
+    background-color: #020617;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.7);
+}
+
+/* Títulos y listas */
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.simple-list {
+    padding-left: 18px;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* KPIs */
+
+.kpi-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.kpi-box {
+    flex: 1 1 100px;
+    border-radius: 14px;
+    background-color: #f9fafb;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.kpi-number {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f57c3b;
+}
+
+#app-root.dark-theme .kpi-box {
+    background-color: #0b1120;
+}
+
