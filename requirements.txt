@@ -6,11 +6,3 @@ dash
 dash-bootstrap-components
 plotly
 
-"pip install \
-    scikit-learn \
-    xgboost \
-    pandas \
-    numpy \
-    dash \
-    dash-bootstrap-components \
-    plotly"
